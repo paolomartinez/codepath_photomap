@@ -17,6 +17,7 @@ class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate,
     
     func locationsPickedLocation(controller: LocationsViewController, latitude: NSNumber, longitude: NSNumber) {
         
+        
     }
     
     @IBOutlet weak var mapScreen: MKMapView! {
