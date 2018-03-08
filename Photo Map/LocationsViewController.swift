@@ -44,9 +44,7 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell") as! LocationCell
-        
         cell.location = results[(indexPath as NSIndexPath).row] as! NSDictionary
-        
         return cell
     }
 
@@ -57,11 +55,7 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
         let lat = venue.value(forKeyPath: "location.lat") as! NSNumber
         let lng = venue.value(forKeyPath: "location.lng") as! NSNumber
 
-        let latString = "\(lat)"
-        let lngString = "\(lng)"
-        
         delegate.locationsPickedLocation(controller: self, latitude: lat, longitude: lng)
-        print(latString + " " + lngString)
     }
     
     func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -97,7 +91,7 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
                             self.results = responseDictionary.value(forKeyPath: "response.venues") as! NSArray
                             self.tableView.reloadData()
 
-                    }
+                    } else {}
                 }
         });
         task.resume()
