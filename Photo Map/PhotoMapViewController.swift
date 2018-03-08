@@ -18,6 +18,7 @@ class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate,
     func locationsPickedLocation(controller: LocationsViewController, latitude: NSNumber, longitude: NSNumber) {
         let locationCoordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(latitude), longitude: CLLocationDegrees(longitude))
         
+
         let annotation = MKPointAnnotation()
         annotation.coordinate = locationCoordinate
         annotation.title = "Picture!"
