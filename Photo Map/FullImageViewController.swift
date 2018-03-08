@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FullImageViewController: UIViewController {
+class FullImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +20,7 @@ class FullImageViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
 
     /*
